@@ -9,20 +9,13 @@ jobs:
             - name: Checkout My repo
               uses: actions/checkout@v4
             
-            - name: Install cowsay
-              run: sudo apt-get install -y cowsay 
+            - name: Checkout repo files
+              run: ls -ltra
             
-            - name: Generate ASCII ArtWork
-              run: cowsay -f dragon "Run for cover, I am a DRAGON .... RAWR" >> dragon.txt
-            
-            - name: Test file exists
-              run: grep -i "dragon" dragon.txt
-
-            - name: Read file
-              run: cat dragon.txt
-            
-            - name: Checkout repo files ç
-              run: ls
+            - name: Executing shell script
+              run: |
+                chmod +x ascii-script.sh
+                ./ascii-script.sh 
               
 
 
